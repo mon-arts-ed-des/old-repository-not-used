@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="#">
+    <meta name="author" content="#">
+    <title>@BirdyOz: Shutterstock attribution maker</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">@BirdyOz: Shutterstock attribution maker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#right">Float Right</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#left">Float Left</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#center">Centered</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#large">Full-screen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#overlay">Text Overlay</a>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-outline-light" href="#navCollapse" target="#navCollapse" type="button" data-toggle="collapse" data-target="#navCollapse" aria-expanded="false" aria-controls="collapseExample">
+                Want more helpers?
+            </button>
+    </nav>
+    <div class="clearfix"></div>
+
+    <div class="mt-4 pt-5 pb-2 alert-warning collapse" id="navCollapse">
+        <div class="card-deck m-3">
+            <div class="card text-white shadow rounded bg-primary">
+                <h5 class="card-header mt-2">UI elements</h5>
+                <div class="card-body">
+                    <p class="card-text">Get code snippets for various layout and design elements, including interactive elements.</p>
+                    <a href="https://birdyoz.github.io/helpers/ui-elements.html" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="card text-white shadow rounded bg-danger">
+                <h5 class="card-header mt-2">Youtube helper</h5>
+                <div class="card-body">
+                    <p class="card-text">Get responsive Youtube embed code, complete with video box, title, description and playtime</p>
+                    <a href="https://birdyoz.github.io/helpers/youtube_embedder.html" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="card text-white shadow rounded bg-secondary">
+                <h5 class="card-header mt-2">Unsplash helper</h5>
+                <div class="card-body">
+                    <p class="card-text">Get responsive Unsplash image embed with attribution, for various screen layouts. Download appropriately resized images</p>
+                    <a href="https://birdyoz.github.io/helpers/unsplash_embed.html" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="card text-white shadow rounded bg-success">
+                <h5 class="card-header mt-2">Pixabay helper</h5>
+                <div class="card-body">
+                    <p class="card-text">Get responsive Pixabay image placeholder with attribution. Download resized images, to replace this placeholder.</p>
+                    <a href="https://birdyoz.github.io/helpers/pixabay_attribution_helper.html" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="card text-white shadow rounded bg-info">
+                <h5 class="card-header mt-2">Shutterstock helper</h5>
+                <div class="card-body">
+                    <p class="card-text">Get Shutterstock image placeholder with attribution. To be replaced with the purchased shutterstock original.</p>
+                    <a href="https://birdyoz.github.io/helpers/shutterstock_attribution_helper.html" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Marketing messaging and featurettes
+        ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing" style="margin-top: 100px">
+        <h1 class="display-4">Shutterstock attribution maker</h1>
+        <p class="lead">A Bookmarklet to create HTML snippets to create Shutterstock attributions and properly align these statements with the image. These can be pasted into any HTML editor.</p>
+        <p>
+            <button class="btn btn-lg btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                First time? Click here for setup instructions.
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <h2>First time user?</h2>
+                <ol>
+                    <li><strong>Drag</strong> the following bookmarklet into your browers bookmark bar: <a class="bookmarklet" href="javascript:(function()%7Bvar%20addr%20%3D%20document.location.href.split(%22%3F%22)%5B0%5D%3Bconsole.log(%22%40GB%3A%20addr%20%3D%20%22%2C%20addr)%3Bif%20(document.getElementsByClassName(%22product-contrib%22).length%20%3D%3D%3D%200)%20%7Bel%20%3D%20document.querySelectorAll('%5Bdata-track-label%3D%22contributorLink%22%5D')%5B0%5D.parentNode%3B%7D%20else%20%7Bel%20%3D%20document.getElementsByClassName(%22product-contrib%22)%5B0%5D.getElementsByTagName(%22h3%22)%5B0%5D%3B%7Dconsole.log(%22%40GB%3A%20el%20%3D%20%22%2C%20el)%3Bvar%20user%20%3D%20encodeURIComponent(el.innerHTML)%3Bconsole.log(%22%40GB%3A%20user%20%3D%20%22%2C%20user)%3Bvar%20url%20%3D%20'https%3A%2F%2Fbirdyoz.github.io%2Fhelpers%2Fshutterstock_attribution_helper.html%3Faddr%3D'%20%2B%20addr%20%2B%20'%26user%3D'%20%2B%20user%3Bconsole.log(%22%40GB%3A%20url%20%3D%20%22%2C%20url)%3Bwindow.open(url%2C%20'_blank')%7D)()">Shutterstock attribution maker</a>
+                        <br><span class="text-muted">(Note: Make sure you drag the link onto your browser bookmarks. Clicking will just bring you back to here)</span></li>
+                    <li>Visit Shutterstock and locate the image you wish to attribute</li>
+                    <li>Click on the 'Shutterstock attribution maker' in your bookmarks</li>
+                    <li>You will be returned to this page, but now your selected image will be displayed below</li>
+                    <li>Press the copy button next to the layout type that you prefer. This will copy the HTML to your clipboard</li>
+                    <li>Paste this HTML anywhere that you can paste code (eg a Moodle page or tool)</li>
+                </ol>
+
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/b90r3Zt6zG0?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- Three columns of text below the carousel -->
+        <!-- /.row -->
+
+        <div class="alert alert-warning" role="alert">
+            Note:  The images below act as <strong>placeholders ONLY</strong>, designed to achieve layout and attribution.   They are to replaced by a properly purchased and licenced version of the same image.
+        </div>
+        <!-- START THE FEATURETTES -->
+        <div id="embedder">
+            <hr class="featurette-divider clearfix" id="right">
+            <div class="clearfix">
+<div class="unsplash-copy unsplash-fr">
+<!-- Start of Shutterstock Embed Code - Float Right  (Embed code by @BirdyOz)-->
+<div class="float-right" style="float: right; width: 30%; max-width: 320px; min-width: 200px; margin:0 0 10px 20px !important">
+    <!-- REPLACE the img src with a link to the purchased shutterstock image -->
+    <!-- Remember to resize the image appropriately, BEFORE upload -->
+    <img src="https://dummyimage.com//b094b0/e3b1e3&text=Loading+image+from+Shutterstock" class="img-responsive img-fluid">
+    <div class="text-muted" style="opacity: 0.5">
+        <small>Attribution goes here</small>
+    </div>
+</div>
+<!-- End of Shutterstock Embed Code -->
+</div>
+                <h2 class="featurette-heading">Float Right <span class="text-muted">(Image to the right of text)</span></h2>
+                <p class="lead">Image will occupy 30% of the available space, between the minimum width of 200px and maximum width of 320px</p>
+                <button id="unsplash-fr" class="btn btn-outline-primary"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy embed code</button>
+            </div>
+            <hr class="featurette-divider clearfix" id="left">
+            <div class="clearfix">
+<div class="unsplash-copy unsplash-fl">
+<!-- Start of Shutterstock Embed Code - Float Left (Embed code by @BirdyOz)-->
+<div class="float-left" style="float: left; width: 30%; max-width: 320px; min-width: 200px; margin:0 20px 10px 0 !important">
+    <!-- REPLACE the img src with a link to the purchased shutterstock image -->
+    <!-- Remember to resize the image appropriately, BEFORE upload -->
+    <img src="https://dummyimage.com//b094b0/e3b1e3&text=Loading+image+from+Shutterstock" class="img-responsive img-fluid">
+    <div class="text-muted" style="opacity: 0.5">
+        <small>Attribution goes here</small>
+    </div>
+</div>
+<!-- End of Shutterstock Embed code -->
+</div>
+                <h2 class="featurette-heading">Float Left <span class="text-muted">(Image to the left of text)</span></h2>
+                <p class="lead">Image will occupy 30% of the available space, between the minimum width of 200px and maximum width of 320px</p>
+                <button id="unsplash-fl" class="btn btn-outline-primary"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy embed code</button>
+            </div>
+            <hr class="featurette-divider clearfix" id="center">
+            <div class="clearfix">
+                <h2 class="featurette-heading">Centered <span class="text-muted">(Image above or below text)</span></h2>
+                <p class="lead">Image will occupy 60% of the available space, aligned to the center of the container.</p>
+                <button id="unsplash-ce" class="btn btn-outline-primary"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy embed code</button>
+<div class="unsplash-copy unsplash-ce">
+<!-- Start of Shutterstock Embed Code - Centered (Embed code by @BirdyOz)-->
+<div style="width:60%; margin: 20px 20% !important;">
+    <!-- REPLACE the img src with a link to the purchased shutterstock image -->
+    <!-- Remember to resize the image appropriately, BEFORE upload -->
+    <img src="https://dummyimage.com//b094b0/e3b1e3&text=Loading+image+from+Shutterstock" class="img-responsive img-fluid">
+    <div class="text-muted" style="opacity: 0.5">
+        <small>Attribution goes here</small>
+    </div>
+</div>
+<!-- End of Shutterstock Embed code -->
+</div>
+            </div>
+            <hr class="featurette-divider clearfix" id="large">
+            <div class="clearfix">
+                <h2 class="featurette-heading">Full width <span class="text-muted">(Image above or below text)</span></h2>
+                <p class="lead">Image will occupy 100% of the available space</p>
+                <button id="unsplash-lg" class="btn btn-outline-primary"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy embed code</button>
+<div class="unsplash-copy unsplash-lg">
+<!-- Start of Shutterstock Embed Code - Full-width (Embed code by @BirdyOz)-->
+<div style="width:100%; margin: 20px auto;">
+    <!-- REPLACE the img src with a link to the purchased shutterstock image -->
+    <!-- Remember to resize the image appropriately, BEFORE upload -->
+    <img src="https://dummyimage.com//b094b0/e3b1e3&text=Loading+image+from+Shutterstock" class="img-responsive img-fluid">
+    <div class="text-muted" style="opacity: 0.5">
+        <small>Attribution goes here</small>
+    </div>
+</div>
+<!-- End of Shutterstock Embed code -->
+</div>
+
+                <hr class="featurette-divider clearfix" id="overlay">
+                <div class="clearfix">
+                    <h2 class="featurette-heading">Full width, with text overlay <span class="text-muted">(Custom text overlay)</span></h2>
+                    <p class="lead">Image will occupy 100% of the available space. Text overlay can be edited by you, after embedding</p>
+                    <button id="unsplash-ov" class="btn btn-outline-primary"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy embed code</button>
+<div class="unsplash-copy unsplash-ov">
+<!-- Start of Shutterstock Embed Code - Full-width, with text overlay (Embed code by @BirdyOz)-->
+<div class="overlay" style="width:100%; margin: 20px auto; text-align: center; color: white !important; text-shadow: 2px 2px 4px #000000; position: relative;">
+    <!-- REPLACE the img src with a link to the purchased shutterstock image -->
+    <!-- Remember to resize the image appropriately, BEFORE upload -->
+    <img src="https://dummyimage.com//b094b0/e3b1e3&text=Loading+image+from+Shutterstock" class="img-responsive img-fluid" style="width:100%">
+    <div class="text-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%">
+        <p class="" style="font-size: calc( 12px + (40 - 16) * ( 80vw / (1000 - 400) )) !important; line-height: calc( 20px + (32 - 16) * ( 80vw / (1000 - 400) )) !important;">Text overlay goes here</p>
+        <p class="" style="font-size: calc( 12px + (24 - 16) * ( 60vw / (1000 - 400) )) !important; line-height: calc( 10px + (20 - 10) * ( 80vw / (1000 - 400) )) !important;">Optional byline or citation goes here. Delete if not required.</p>
+    </div>
+</div>
+<div class="text-muted" style="opacity: 0.5; margin-top: -1.2em">
+    <small>Attribution goes here</small>
+</div>
+<!-- End of Shutterstock Embed code -->
+</div>
+                </div>
+            </div>
+            <!-- /END THE FEATURETTES -->
+            <!-- FOOTER -->
+            <hr>
+            <footer class="page-footer">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p>'Shutterstock attribution maker' by Greg Bird (@BirdyOz) | <a href="https://twitter.com/BirdyOz" target="_blank">Twitter</a> | <a href="https://www.linkedin.com/in/birdyoz/" target="_blank">LinkedIn</a> | <a href="https://www.youtube.com/BirdyOz" target="_blank">YouTube</a> | <a href="mailto:greg.bird.oz@gmail.com">email</a></p>
+            </footer>
+        </div>
+        <!-- /.container -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="shutterstock_attribution_helper.js"></script>
+</body>
+
+</html>
